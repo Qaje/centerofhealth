@@ -1,0 +1,25 @@
+﻿@model Model.Vacuna
+
+@using (Html.BeginForm("Guardar", "Vacuna", FormMethod.Post, new { id = "frm-nino" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Id)
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Infpri)
+        @Html.CheckBox("Ppri", true)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Infseg)
+        @Html.CheckBox("Infseg", true)
+    </div>
+    @if (Model.Id > 0)
+    {
+        <div role="tabpanel" class="tab-pane" id="vacuna"></div>
+    }
+    <script>
+        function
+    </script>
+}

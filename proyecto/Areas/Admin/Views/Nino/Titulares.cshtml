@@ -1,0 +1,82 @@
+﻿@model Model.Titular
+@using (Html.BeginForm("Guardar", "Titular", FormMethod.Post, new { id = "frm-titular" }))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">Información Titulares</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.Idt)
+
+                        <label><b>Apellido Paterno</b></label>
+                        @Html.TextBoxFor(x => x.Ap_pat_t, new { @class = "form-control", with = "9px" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Apelido Materno</b></label>
+                        @Html.TextBoxFor(x => x.Ap_mat_t, new { @class = "form-control", with = "9px" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Apellido Casado</b></label>
+                        @Html.TextBoxFor(x => x.Ap_casad_t, new { @class = "form-control", with = "9px" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Primer Nombre</b></label>
+                        @Html.TextBoxFor(x => x.Pri_nom_t, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Segundo Nombre</b></label>
+                        @Html.TextBoxFor(x => x.Seg_nom_t, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Tercer Nombre</b></label>
+                        @Html.TextBoxFor(x => x.Ter_nom_t, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label><b>Carnet de Identidad</b></label>
+                        @Html.TextBoxFor(x => x.Ci_t, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="form-group">
+                        <label><b>Expedido</b></label>
+                        <select name="Expedido_t" class="form-control">
+                            <option @(Model.Expedido_t == "LP" ? "selected" : "") value="LP">La Paz</option>
+                            <option @(Model.Expedido_t == "OR" ? "selected" : "") value="OR">Oruro</option>
+                            <option @(Model.Expedido_t == "PT" ? "selected" : "") value="PT">Potosi</option>
+                            <option @(Model.Expedido_t == "CB" ? "selected" : "") value="CB">Cochambamba</option>
+                            <option @(Model.Expedido_t == "SC" ? "selected" : "") value="SC">Santa Cruz</option>
+                            <option @(Model.Expedido_t == "BN" ? "selected" : "") value="BN">Beni</option>
+                            <option @(Model.Expedido_t == "PA" ? "selected" : "") value="PA">Pando</option>
+                            <option @(Model.Expedido_t == "TJ" ? "selected" : "") value="TJ">Tarija</option>
+                            <option @(Model.Expedido_t == "CH" ? "selected" : "") value="CH">Chuquisaca</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><b>Fecha de Nacimiento</b></label>
+                        @Html.TextBoxFor(x => x.Fec_nac_t, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Edad</b></label>
+                        @Html.TextBoxFor(x => x.Edad_t, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Parentesco</b></label>
+                        @Html.TextBoxFor(x => x.Parentesco_t, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label><b>Celular</b></label>
+                        @Html.TextBoxFor(x => x.Cel_t, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="text-left">
+                <button onclick="return confirm('¿Desea Adicionar este Titular?');" class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </div>
+
+    </div>
+}

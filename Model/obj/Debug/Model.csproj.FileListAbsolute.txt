@@ -1,0 +1,10 @@
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\Model.dll
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\Model.pdb
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\EntityFramework.dll
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\EntityFramework.xml
+c:\Users\polar\source\repos\proyecto\Model\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\polar\source\repos\proyecto\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+c:\Users\polar\source\repos\proyecto\Model\obj\Debug\Model.csproj.CopyComplete
+c:\Users\polar\source\repos\proyecto\Model\obj\Debug\Model.dll
+c:\Users\polar\source\repos\proyecto\Model\obj\Debug\Model.pdb

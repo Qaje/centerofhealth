@@ -1,0 +1,80 @@
+﻿@model Model.Nino
+@{
+    ViewBag.Title = "Ver Recien Nacido";
+}
+<ol class="breadcrumb">
+    <li><a href="~/">Recien Nacido </a></li>
+    <li class="align-content-around">@Model.Primer_apellido @Model.Segundo_apellido @Model.Primer_nombre @Model.Segundo_nombre @Model.Tercer_nombre</li>
+</ol>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Informacion General Recien Nacido</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label><b>Nro   :   </b></label>@Model.Id<br />
+                    <label><b>Numero Formulario   :   </b></label>@Model.Nro_formulario<br />
+                    <label><b>Nro Declaracion Form:   </b></label>@Model.Nro_dec_jur<br />
+                    <label><b>Nombre Completo     :   </b></label>@Model.Primer_apellido @Model.Segundo_apellido @Model.Primer_nombre @Model.Segundo_nombre @Model.Tercer_nombre<br />
+                    <label><b>Fecha Nacimiento    :   </b></label>@Model.Fec_nac<br />
+                    <label><b>Oficialia           :   </b></label>@Model.Oficialia<br />
+                    <label><b>Libro               :   </b></label>@Model.Libro<br />
+                    <label><b>Año                 :   </b></label>@Model.Año<br />
+                    <label><b>Partida             :   </b></label>@Model.Partida<br />
+                    <label><b>Folio               :   </b></label>@Model.Folio<br />
+                    <label><b>Sexo                :   </b></label>@(Model.Sexo == "M" ? "Masculino" : "Femenino")<br />
+                    <label><b>Fecha de Control    :   </b></label>@Model.Fecha_control<br />
+                    <label><b>Fecha de Inscripcion al Sistema:   </b></label>@Model.Fecha_inscripcion_pro<br />
+                    <label><b>Edad                :   </b></label>@Model.Edad<br />
+                    <label><b>Control             :   </b></label>@Model.Numero_control<br />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="content-details fadeIn-bottom">
+                    <h4>Etapas de Crecimiento</h4>
+                    <p>
+                        La Salud es un Derecho.
+                    </p>
+                </div>
+                <div class="content-overlay"></div>
+                <img class="col-lg-12 d-flex align-self-end img-right" src="~/assets/img/icpro.png" alt="">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if (Model.Titular.Count > 0)
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading"><center><b>Datos del Titular(es)</b></center> </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Apellido Paterno</th>
+                    <th>Parentesco</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model.Titular)
+                {
+                    <tr>
+                        <td>@t.Idt</td>
+                        <td>@t.Ap_pat_t</td>
+                        <td>@t.Parentesco_t</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <center>
+        <p><b>No tiene Ningun Titular Registrado</b></p>
+    </center>
+
+}

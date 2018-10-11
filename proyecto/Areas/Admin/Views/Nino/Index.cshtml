@@ -1,0 +1,51 @@
+﻿@model List<Model.Nino>
+ 
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2 class="page-header">
+    Recien Nacidos
+</h2>
+<a class="btn glyphicon-plus btn-group-xs btn-success btn-block lnr-text-align-right" href="~/Admin/Nino/Crud/">Crear Nuevo Registro Recien Nacido</a>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Informacion General Recien Nacido</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-auto">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:50px;">Nro</th>
+                            <th style="width:200px;">Nombre Completo</th>
+                            <th style="width:200px;">Sexo</th>
+                            <th style="width:200px;">Edad</th>
+                            <th style="width:200px;">Numero Control</th>
+                            <th style="width:100px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <th>@m.Id</th>
+                                <th>@(m.Primer_nombre + " " + m.Segundo_nombre + " " + m.Tercer_nombre + " " + m.Primer_apellido + " " + m.Segundo_apellido)</th>
+                                <th>@(m.Sexo == "M" ? "Masculino" : "Femenino")</th>
+                                <th>@m.Edad</th>
+                                <th>@m.Numero_control</th>
+                                <th>
+                                    <a class="btn btn-xs btn-primary btn-block" href="~/Admin/Nino/Ver/@m.Id">Vizualizar</a>
+                                    <a class="btn btn-xs btn-info btn-block" href="~/Admin/Nino/Crud/@m.Id">Editar</a>
+                                    <a onclick="return confirm('¿Desea Eliminar este registro?');" class="btn btn-xs btn-danger btn-block" href="~/Admin/Nino/Eliminar/@m.Id">Eliminar</a>
+                                    <a class="btn glyphicon-plus btn-group-xs btn-warning btn-block lnr-text-align-right" href="~/Admin/Titular/Crud/@m.Id">Crear Nuevo Registro Titular</a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>    
+            </div>
+</div>
+</div>

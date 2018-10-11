@@ -1,0 +1,126 @@
+﻿@model Model.Nino
+@{
+    ViewBag.Title = (Model.Id > 0 ? Model.Primer_nombre + " " + Model.Primer_apellido : "Nuevo Registro");
+    List<Model.Vacuna> vacunas = ViewBag.Vacunas;
+}
+
+<ol class="breadcrumb">
+    <li><a href="~/">Niños</a></li>
+    <li class="active">@(Model.Id > 0 ? Model.Primer_nombre + " " + Model.Primer_apellido : "Nuevo Registro")</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="informacion" aria-controls="informacion" role="tab" data-toggle="tab">Informacion</a></li>
+    @if (Model.Id > 0)
+    {
+        <li role="presentation"><a href="#titular" aria-controls="titular" role="tab" data-toggle="tab">Titular</a></li>
+    }
+</ul>
+
+@using (Html.BeginForm("Guardar", "Nino", FormMethod.Post, new { id = "frm-nino" }))
+{
+<div class="panel panel-default">
+    <div class="panel-heading">Informacion Recien Nacido</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    @Html.HiddenFor(x => x.Id)
+                    <label><b>Nro Formulario</b></label>
+                    @Html.TextBoxFor(x => x.Nro_formulario, new { @class = "form-control", with = "9px" })
+                </div>
+                <div class="form-group">
+                    <label><b>Dec. Jurada</b></label>
+                    @Html.TextBoxFor(x => x.Nro_dec_jur, new { @class = "form-control", with = "9px" })
+                </div>
+                <div class="form-group">
+                    <label><b>Apellido Paterno</b></label>
+                    @Html.TextBoxFor(x => x.Primer_apellido, new { @class = "form-control", with = "9px" })
+                </div>
+                <div class="form-group">
+                    <label><b>Apellido Materno</b></label>
+                    @Html.TextBoxFor(x => x.Segundo_apellido, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Primer Nombre</b></label>
+                    @Html.TextBoxFor(x => x.Primer_nombre, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Segundo Nombre</b></label>
+                    @Html.TextBoxFor(x => x.Segundo_nombre, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Tercer Nombre</b></label>
+                    @Html.TextBoxFor(x => x.Tercer_nombre, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    
+                    @Html.LabelFor(model => model.Fec_nac, htmlAttributes: new { @class = "control-label" })
+                    
+                        @Html.EditorFor(model => model.Fec_nac, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.ValidationMessageFor(model => model.Fec_nac, "", new { @class = "text-danger" })
+                    
+                </div>
+
+                <div class="form-group">
+                    <label><b>Oficialia</b></label>
+                    @Html.TextBoxFor(x => x.Oficialia, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Libro</b></label>
+                    @Html.TextBoxFor(x => x.Libro, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label><b>Año</b></label>
+                    @Html.TextBoxFor(x => x.Año, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Partida</b></label>
+                    @Html.TextBoxFor(x => x.Partida, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Folio</b></label>
+                    @Html.TextBoxFor(x => x.Folio, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Sexo</b></label>
+                    <select name="Sexo" class="form-control">
+                        <option @(Model.Sexo == "M" ? "selected" : "") value="M">Masculino</option>
+                        <option @(Model.Sexo == "F" ? "selected" : "") value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Fec de control</b></label>
+                    @Html.TextBoxFor(x => x.Fecha_control, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Fec de ins sis</b></label>
+                    @Html.TextBoxFor(x => x.Fecha_inscripcion_sis, new { @class ="form-control" , @readonly = "readonly"})
+                </div>
+                <div class="form-group">
+                    <label><b>Fec de ins pro</b></label>
+                    @Html.TextBoxFor(x => x.Fecha_inscripcion_pro, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+                <div class="form-group">
+                    <label><b>Edad</b></label>
+                    @Html.TextBoxFor(x => x.Edad, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label><b>Control</b></label>
+                    @Html.TextBoxFor(x => x.Numero_control, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+       
+         
+        <div class="text-left">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+    </div>
+    </div>
+
+
+}
+

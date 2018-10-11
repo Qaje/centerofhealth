@@ -1,0 +1,47 @@
+﻿@model List<Model.Titular>
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2 class="page-header">
+    Titulares
+</h2>
+<a class="btn glyphicon-plus btn-group-xs btn-success btn-block lnr-text-align-right" href="~/Admin/Titular/Crud/">Crear Nuevo Registro Titular</a>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Informacion General Titulares</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-auto">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">Nombre Completo</th>
+                            <th style="width:200px;">Nro. Carnet Identidad</th>
+                            <th style="width:200px;">Edad</th>
+                            <th style="width:200px;">Parentesco</th>
+                            <th style="width:100px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <th>@(m.Ap_pat_t + " " + m.Ap_mat_t+ " " + m.Ap_casad_t+ " " + m.Pri_nom_t+ " " + m.Seg_nom_t+" "+m.Ter_nom_t)</th>
+                                <th>@(m.Ci_t + " "+m.Expedido_t)</th>
+                                <th>@m.Edad_t</th>
+                                <th>@(m.Parentesco_t)</th>
+                                <th>
+                                    <a class="btn btn-xs btn-primary btn-block" href="~/Admin/Titular/Ver/@m.Idt">Vizualizar</a>
+                                    <a class="btn btn-xs btn-success btn-block" href="~/Admin/Titular/Crud/@m.Idt">Editar</a>
+                                    <a onclick="return confirm('¿Desea Eliminar este registro?');" class="btn btn-xs btn-danger btn-block" href="~/Admin/Titular/Eliminar/@m.Idt">Eliminar</a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

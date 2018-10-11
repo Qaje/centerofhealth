@@ -1,0 +1,98 @@
+﻿@model Model.Vacuna
+
+@using (Html.BeginForm("Guardar", "Vacuna", FormMethod.Post, new { id = "frm-vacuna" }))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">Información Vacuna</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="col-sm-6">
+ 
+                    <div class="form-group">
+                        <label><b>Id</b></label>
+                        @Html.TextBoxFor(x => x.NinoId, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        
+                        @Html.LabelFor(x => x.Ppri)
+                        @Html.CheckBox("Ppri", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Pseg)
+                        @Html.CheckBox("Pseg", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Pter)
+                        @Html.CheckBox("Pter", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Npri)
+                        @Html.CheckBox("Npri", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Nseg)
+                        @Html.CheckBox("Nseg", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Nter)
+                        @Html.CheckBox("Nter", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Opvpri)
+                        @Html.CheckBox("Opvpri", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Opvseg)
+                        @Html.CheckBox("Opvseg", false)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Opvter)
+                        @Html.CheckBox("Opvter", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Rtpri)
+                        @Html.CheckBox("Rtpri", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Rtseg)
+                        @Html.CheckBox("Rtseg", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Infpri)
+                        @Html.CheckBox("Infpri", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Infseg)
+                        @Html.CheckBox("Infseg", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Infund)
+                        @Html.CheckBox("Infund", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Pentaym)
+                        @Html.CheckBox("Pentaym", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Opvaym)
+                        @Html.CheckBox("Opvaym", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Pentca)
+                        @Html.CheckBox("Pentca", false)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Opvca)
+                        @Html.CheckBox("Opvca", false)
+                    </div>
+                    <div class="text-left">
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                }

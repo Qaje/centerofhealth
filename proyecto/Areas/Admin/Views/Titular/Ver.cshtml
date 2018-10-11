@@ -1,0 +1,40 @@
+﻿@model Model.Titular
+@{
+    ViewBag.Title = "Ver Titular";
+}
+<ol class="breadcrumb">
+    <li><a href="~/">Titular </a></li>
+    <li class="align-content-around">@Model.Ap_pat_t @Model.Ap_mat_t @Model.Pri_nom_t @Model.Seg_nom_t @Model.Ter_nom_t</li>
+</ol>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Informacion General Titular</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label><b>Nro   :   </b></label>@Model.Idt<br />
+                    <label><b>Nombre Completo     :   </b></label>@Model.Ap_pat_t @Model.Ap_mat_t @Model.Ap_casad_t @Model.Pri_nom_t @Model.Seg_nom_t @Model.Ter_nom_t <br />
+                    <label><b>Cedula Identidad    :   </b></label>@Model.Ci_t<br />
+                    <label><b>Expedido            :   </b></label>@Model.Expedido_t<br />
+                    <label><b>Fecha de Nacimiento :   </b></label>@Model.Fec_nac_t<br />
+                    <label><b>Edad                :   </b></label>@Model.Edad_t<br />
+                    <label><b>Parentezco          :   </b></label>@Model.Parentesco_t<br />
+                    <label><b>Celular             :   </b></label>@Model.Cel_t<br />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="content-details fadeIn-bottom">
+                    <h4>La Familia</h4>
+                    <p>
+                        "Tu no eliges a tu familia. Ellos son tu regalo de Dios para ti".
+                    </p>
+                </div>
+                <div class="content-overlay"></div>
+                <img class="col-lg-12 d-flex align-self-end img-right" src="~/assets/img/fam.png" alt="">
+
+            </div>
+        </div>
+    </div>
+</div>
+

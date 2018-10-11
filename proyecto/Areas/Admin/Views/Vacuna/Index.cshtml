@@ -1,0 +1,46 @@
+﻿@model List<Model.Vacuna>
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2 class="page-header">
+    Vacunas
+</h2>
+<a class="btn glyphicon-plus btn-group-xs btn-success btn-block lnr-text-align-right" href="~/Admin/Vacuna/Crud/">Crear Nuevo Registro Titular</a>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Informacion General Vacunas</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-auto">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">id</th>
+                            <th style="width:200px;">Pentavalente</th>
+                            <th style="width:200px;">Neumococica</th>
+                            <th style="width:200px;">OPV</th>
+                            <th style="width:100px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <th>@(m.Id)</th>
+                                <th>@m.Ppri+@m.Pseg+@m.Pter</th>
+                                <th>@m.Npri+@m.Nseg+@m.Nter</th>
+                                <th>@m.Opvpri+@m.Opvseg+@m.Opvter</th>
+                                <th>
+                                    <a class="btn btn-xs btn-success btn-block" href="~/Admin/Vacuna/Crud/@m.Id">Editar</a>
+                                    <a onclick="return confirm('¿Desea Eliminar este registro?');" class="btn btn-xs btn-danger btn-block" href="~/Admin/Vacuna/Eliminar/@m.Id">Eliminar</a>
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
